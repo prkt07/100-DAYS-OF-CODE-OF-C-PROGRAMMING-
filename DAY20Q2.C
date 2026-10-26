@@ -1,0 +1,28 @@
+
+#include <stdio.h>
+
+int main() {
+    long long n, digit, result = 0, place = 1;
+
+    scanf("%lld", &n);
+
+    if (n == 0) {
+        printf("1");
+        return 0;
+    }
+
+    while (n > 0) {
+        digit = n % 10;
+
+        if (digit == 0) {
+            result = result + 1 * place;
+        }
+
+        n = n / 10;
+        place = place * 10;
+    }
+
+    printf("%lld", result);
+
+    return 0;
+}
